@@ -1,0 +1,21 @@
+Compiling 1 files with Solc 0.8.35
+Solc 0.8.35 finished in 1.51s
+Compiler run successful!
+
+Ran 2 tests for test/AuditSettlement.t.sol:AuditSettlementTest
+[PASS] test_route8_exactIn_revertsInsufficientCredits() (gas: 240471)
+Logs:
+  route8 quote tokenIn 10000000000000000000
+  route8 quote tokenOut 30766120
+  route8 quote issuer 0
+  route8 quote spread 3080
+  route8 quote lp 0
+
+[PASS] test_route9_exactOut_revertsInsufficientCredits() (gas: 238841)
+Logs:
+  route9 quote tokenIn 325032860822229128
+  route9 quote tokenOut 1000000
+
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 509.17ms (10.68ms CPU time)
+
+Ran 1 test suite in 513.73ms (509.17ms CPU time): 2 tests passed, 0 failed, 0 skipped (2 total tests)

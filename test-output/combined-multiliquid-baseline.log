@@ -1,0 +1,22 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/Baseline.t.sol:BaselineTest
+[PASS] test_forkAndConfig() (gas: 89590)
+Logs:
+  fork block 12075525
+  fork id 0
+  USDC/USD 1000000000000000000
+  TSY/USD 1000000000000000000
+  RW0/USD 3080000000000000000
+  RW1/USD 1190000000000000000
+  spreadProtocolTakeRate 0
+  issuerFee(USDC) 0
+  discount(USDC,RW0) 1000000000000000
+  redemption(USDC,RW0) 1000000000000000
+  protocolFeeExempt(USDC) false
+  protocolFeeExempt(TSY) true
+  autoLiquidity(USDC) 0x06aa03964db1f7257357ef09714a5f0ca3633723df419e97015e0c7a3e83edb7
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 8.67s (7.43s CPU time)
+
+Ran 1 test suite in 8.67s (8.67s CPU time): 1 tests passed, 0 failed, 0 skipped (1 total tests)

@@ -1,0 +1,36 @@
+No files changed, compilation skipped
+
+Ran 3 tests for test/Baseline.t.sol:BaselineTest
+[PASS] test_forkAndConfig() (gas: 89590)
+Logs:
+  fork block 12067842
+  fork id 0
+  USDC/USD 1000000000000000000
+  TSY/USD 1000000000000000000
+  RW0/USD 3080000000000000000
+  RW1/USD 1190000000000000000
+  spreadProtocolTakeRate 0
+  issuerFee(USDC) 0
+  discount(USDC,RW0) 1000000000000000
+  redemption(USDC,RW0) 1000000000000000
+  protocolFeeExempt(USDC) false
+  protocolFeeExempt(TSY) true
+  autoLiquidity(USDC) 0x06aa03964db1f7257357ef09714a5f0ca3633723df419e97015e0c7a3e83edb7
+
+[PASS] test_route0_quote_smoke() (gas: 64408)
+Logs:
+  route0 100 USDC -> RW0
+  tokenInAmt 100000000
+  tokenOutAmt 32431818181818181818
+  issuerFeeAmt 0
+  spreadFeeAmt 10000
+  lpFeeAmt 100000
+  residual USD WAD 1
+
+[PASS] test_storageSlots_matchGetters() (gas: 31393)
+Logs:
+  storage-slot derivation verified against live getters
+
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 296.31ms (6.33ms CPU time)
+
+Ran 1 test suite in 300.35ms (296.31ms CPU time): 3 tests passed, 0 failed, 0 skipped (3 total tests)

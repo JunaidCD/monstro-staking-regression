@@ -1,0 +1,163 @@
+Compiling 2 files with Solc 0.8.26
+Solc 0.8.26 finished in 1.33s
+Compiler run successful!
+
+Ran 3 tests for test/MonstroStakingRegression.t.sol:MonstroStakingRegressionTest
+[FAIL: new staker inherited historical emissions: 2592000000000000000000000 > 10] test_H01_NewStakerEarnsNothingImmediately() (gas: 254611)
+Traces:
+  [254611] MonstroStakingRegressionTest::test_H01_NewStakerEarnsNothingImmediately()
+    ├─ [0] VM::prank(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6])
+    │   └─ ← [Return]
+    ├─ [121442] MonstroStaking::stake(100000000000000000000000 [1e23])
+    │   ├─ emit Staked(user: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 100000000000000000000000 [1e23], newTotal: 100000000000000000000000 [1e23])
+    │   ├─ [15318] MockMonstro::transferFrom(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 100000000000000000000000 [1e23])
+    │   │   ├─ emit Transfer(from: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], to: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 100000000000000000000000 [1e23])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop]
+    ├─ [0] VM::warp(2592001 [2.592e6])
+    │   └─ ← [Return]
+    ├─ [0] VM::prank(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e])
+    │   └─ ← [Return]
+    ├─ [111695] MonstroStaking::stake(100000000000000000000000 [1e23])
+    │   ├─ emit Staked(user: bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e], amount: 100000000000000000000000 [1e23], newTotal: 100000000000000000000000 [1e23])
+    │   ├─ [10518] MockMonstro::transferFrom(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e], MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 100000000000000000000000 [1e23])
+    │   │   ├─ emit Transfer(from: bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e], to: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 100000000000000000000000 [1e23])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop]
+    ├─ [6407] MonstroStaking::earned(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e]) [staticcall]
+    │   └─ ← [Return] 2592000000000000000000000 [2.592e24]
+    ├─ [0] VM::assertLe(2592000000000000000000000 [2.592e24], 10, "new staker inherited historical emissions") [staticcall]
+    │   └─ ← [Revert] new staker inherited historical emissions: 2592000000000000000000000 > 10
+    └─ ← [Revert] new staker inherited historical emissions: 2592000000000000000000000 > 10
+
+Backtrace:
+  at VM.assertLe
+  at MonstroStakingRegressionTest.test_H01_NewStakerEarnsNothingImmediately
+
+[FAIL: alice was shortchanged: 4384006479967600162000000 !~= 5616006479967600161998380 (max delta: 1000000, real delta: 1231999999999999999998380)] test_H02_EmissionsNeverOverAllocated() (gas: 409267)
+Traces:
+  [409267] MonstroStakingRegressionTest::test_H02_EmissionsNeverOverAllocated()
+    ├─ [0] VM::prank(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6])
+    │   └─ ← [Return]
+    ├─ [121442] MonstroStaking::stake(100000000000000000000000 [1e23])
+    │   ├─ emit Staked(user: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 100000000000000000000000 [1e23], newTotal: 100000000000000000000000 [1e23])
+    │   ├─ [15318] MockMonstro::transferFrom(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 100000000000000000000000 [1e23])
+    │   │   ├─ emit Transfer(from: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], to: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 100000000000000000000000 [1e23])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop]
+    ├─ [0] VM::prank(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e])
+    │   └─ ← [Return]
+    ├─ [88995] MonstroStaking::stake(100000000000000000000000 [1e23])
+    │   ├─ emit Staked(user: bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e], amount: 100000000000000000000000 [1e23], newTotal: 100000000000000000000000 [1e23])
+    │   ├─ [10518] MockMonstro::transferFrom(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e], MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 100000000000000000000000 [1e23])
+    │   │   ├─ emit Transfer(from: bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e], to: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 100000000000000000000000 [1e23])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop]
+    ├─ [0] VM::warp(8640001 [8.64e6])
+    │   └─ ← [Return]
+    ├─ [0] VM::prank(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6])
+    │   └─ ← [Return]
+    ├─ [81498] MonstroStaking::stake(1000000000000000000 [1e18])
+    │   ├─ emit AddedToStake(user: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 1000000000000000000 [1e18], newTotal: 100001000000000000000000 [1e23])
+    │   ├─ [3718] MockMonstro::transferFrom(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 1000000000000000000 [1e18])
+    │   │   ├─ emit Transfer(from: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], to: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 1000000000000000000 [1e18])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop]
+    ├─ [0] VM::warp(11232001 [1.123e7])
+    │   └─ ← [Return]
+    ├─ [2407] MonstroStaking::earned(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6]) [staticcall]
+    │   └─ ← [Return] 5616006479967600161998380 [5.616e24]
+    ├─ [6407] MonstroStaking::earned(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e]) [staticcall]
+    │   └─ ← [Return] 5615993520032399838000000 [5.615e24]
+    ├─ [581] MockMonstro::balanceOf(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e]) [staticcall]
+    │   └─ ← [Return] 900000000000000000000000 [9e23]
+    ├─ [0] VM::prank(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e])
+    │   └─ ← [Return]
+    ├─ [65915] MonstroStaking::claimRewards()
+    │   ├─ [3304] MockMonstro::transfer(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e], 5615993520032399838000000 [5.615e24])
+    │   │   ├─ emit Transfer(from: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], to: bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e], amount: 5615993520032399838000000 [5.615e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit RewardsClaimed(user: bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e], amount: 5615993520032399838000000 [5.615e24])
+    │   └─ ← [Stop]
+    ├─ [581] MockMonstro::balanceOf(bob: [0x1D96F2f6BeF1202E4Ce1Ff6Dad0c2CB002861d3e]) [staticcall]
+    │   └─ ← [Return] 6515993520032399838000000 [6.515e24]
+    ├─ [581] MockMonstro::balanceOf(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6]) [staticcall]
+    │   └─ ← [Return] 899999000000000000000000 [8.999e23]
+    ├─ [0] VM::prank(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6])
+    │   └─ ← [Return]
+    ├─ [15740] MonstroStaking::claimRewards()
+    │   ├─ [3304] MockMonstro::transfer(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], 4384006479967600162000000 [4.384e24])
+    │   │   ├─ emit Transfer(from: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], to: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 4384006479967600162000000 [4.384e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit RewardsClaimed(user: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 4384006479967600162000000 [4.384e24])
+    │   └─ ← [Stop]
+    ├─ [581] MockMonstro::balanceOf(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6]) [staticcall]
+    │   └─ ← [Return] 5284005479967600162000000 [5.284e24]
+    ├─ [0] VM::assertApproxEqAbs(5615993520032399838000000 [5.615e24], 5615993520032399838000000 [5.615e24], 1000000 [1e6], "bob was shortchanged") [staticcall]
+    │   └─ ← [Return]
+    ├─ [0] VM::assertApproxEqAbs(4384006479967600162000000 [4.384e24], 5616006479967600161998380 [5.616e24], 1000000 [1e6], "alice was shortchanged") [staticcall]
+    │   └─ ← [Revert] alice was shortchanged: 4384006479967600162000000 !~= 5616006479967600161998380 (max delta: 1000000, real delta: 1231999999999999999998380)
+    └─ ← [Revert] alice was shortchanged: 4384006479967600162000000 !~= 5616006479967600161998380 (max delta: 1000000, real delta: 1231999999999999999998380)
+
+Backtrace:
+  at VM.assertApproxEqAbs
+  at MonstroStakingRegressionTest.test_H02_EmissionsNeverOverAllocated
+
+[FAIL: getPenaltyInfo penalty != withdraw penalty: 64726019073439878234398 != 64720000000000000000000] test_M01_GetPenaltyInfoMatchesWithdraw() (gas: 288709)
+Traces:
+  [288709] MonstroStakingRegressionTest::test_M01_GetPenaltyInfoMatchesWithdraw()
+    ├─ [0] VM::prank(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6])
+    │   └─ ← [Return]
+    ├─ [121442] MonstroStaking::stake(100000000000000000000000 [1e23])
+    │   ├─ emit Staked(user: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 100000000000000000000000 [1e23], newTotal: 100000000000000000000000 [1e23])
+    │   ├─ [15318] MockMonstro::transferFrom(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], 100000000000000000000000 [1e23])
+    │   │   ├─ emit Transfer(from: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], to: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], amount: 100000000000000000000000 [1e23])
+    │   │   └─ ← [Return] true
+    │   └─ ← [Stop]
+    ├─ [0] VM::warp(8640008 [8.64e6])
+    │   └─ ← [Return]
+    ├─ [5970] MonstroStaking::getPenaltyInfo(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], 0) [staticcall]
+    │   └─ ← [Return] 64720000000000000000000 [6.472e22], 35280000000000000000000 [3.528e22], 6472
+    ├─ [6407] MonstroStaking::earned(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6]) [staticcall]
+    │   └─ ← [Return] 8640007000000000000000000 [8.64e24]
+    ├─ [581] MockMonstro::balanceOf(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6]) [staticcall]
+    │   └─ ← [Return] 900000000000000000000000 [9e23]
+    ├─ [0] VM::prank(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6])
+    │   └─ ← [Return]
+    ├─ [136609] MonstroStaking::withdraw(0)
+    │   ├─ [3304] MockMonstro::transfer(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], 8640007000000000000000000 [8.64e24])
+    │   │   ├─ emit Transfer(from: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], to: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 8640007000000000000000000 [8.64e24])
+    │   │   └─ ← [Return] true
+    │   ├─ emit RewardsClaimed(user: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 8640007000000000000000000 [8.64e24])
+    │   ├─ [7738] MockMonstro::burn(32363009536719939117199 [3.236e22])
+    │   │   ├─ emit Transfer(from: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], to: 0x0000000000000000000000000000000000000000, amount: 32363009536719939117199 [3.236e22])
+    │   │   └─ ← [Stop]
+    │   ├─ emit PenaltyDistributed(burned: 32363009536719939117199 [3.236e22], treasury: 16181504768359969558599 [1.618e22], emissions: 16181504768359969558600 [1.618e22])
+    │   ├─ [3304] MockMonstro::transfer(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], 35273980926560121765602 [3.527e22])
+    │   │   ├─ emit Transfer(from: MonstroStaking: [0x2e234DAe75C793f67A35089C9d99245E1C58470b], to: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 35273980926560121765602 [3.527e22])
+    │   │   └─ ← [Return] true
+    │   ├─ emit Withdrawn(user: alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6], amount: 35273980926560121765602 [3.527e22], penalty: 64726019073439878234398 [6.472e22])
+    │   └─ ← [Stop]
+    ├─ [581] MockMonstro::balanceOf(alice: [0x328809Bc894f92807417D2dAD6b7C998c1aFdac6]) [staticcall]
+    │   └─ ← [Return] 9575280980926560121765602 [9.575e24]
+    ├─ [0] VM::assertEq(64726019073439878234398 [6.472e22], 64720000000000000000000 [6.472e22], "getPenaltyInfo penalty != withdraw penalty") [staticcall]
+    │   └─ ← [Revert] getPenaltyInfo penalty != withdraw penalty: 64726019073439878234398 != 64720000000000000000000
+    └─ ← [Revert] getPenaltyInfo penalty != withdraw penalty: 64726019073439878234398 != 64720000000000000000000
+
+Backtrace:
+  at VM.assertEq
+  at MonstroStakingRegressionTest.test_M01_GetPenaltyInfoMatchesWithdraw
+
+Suite result: FAILED. 0 passed; 3 failed; 0 skipped; finished in 1.97ms (841.10µs CPU time)
+
+Ran 1 test suite in 81.05ms (1.97ms CPU time): 0 tests passed, 3 failed, 0 skipped (3 total tests)
+
+Failing tests:
+Encountered 3 failing tests in test/MonstroStakingRegression.t.sol:MonstroStakingRegressionTest
+[FAIL: new staker inherited historical emissions: 2592000000000000000000000 > 10] test_H01_NewStakerEarnsNothingImmediately() (gas: 254611)
+[FAIL: alice was shortchanged: 4384006479967600162000000 !~= 5616006479967600161998380 (max delta: 1000000, real delta: 1231999999999999999998380)] test_H02_EmissionsNeverOverAllocated() (gas: 409267)
+[FAIL: getPenaltyInfo penalty != withdraw penalty: 64726019073439878234398 != 64720000000000000000000] test_M01_GetPenaltyInfoMatchesWithdraw() (gas: 288709)
+
+Encountered a total of 3 failing tests, 0 tests succeeded
+
+Tip: Run `forge test --rerun` to retry only the 3 failed tests

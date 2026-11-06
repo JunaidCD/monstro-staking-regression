@@ -1,0 +1,67 @@
+No files changed, compilation skipped
+
+Ran 1 test for test/AuditSettlement.t.sol:AuditSpreadFloorTest
+[PASS] test_zeroTakeChargesOneBpOnRoute0() (gas: 78531)
+Logs:
+  live spread fee (6dp) 10000
+  live tokenOut 32431818181818181818
+  no-spread tokenOut 32435064935064935064
+  output delta 3246753246753246
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 547.46ms (3.45ms CPU time)
+
+Ran 2 tests for test/AuditSettlement.t.sol:AuditSettlementRoutesTest
+[PASS] test_route2_exactIn_settles() (gas: 194559)
+Logs:
+  route2 quote in 10000000000000000000 out 30766120
+
+[PASS] test_route3_exactOut_settles() (gas: 195275)
+Logs:
+  route3 quote in 3250328608222291274 out 10000000
+
+Suite result: ok. 2 passed; 0 failed; 0 skipped; finished in 552.22ms (15.56ms CPU time)
+
+Ran 4 tests for test/AuditSettlement.t.sol:AuditSettlementTest
+[PASS] test_route10_exactIn_settles() (gas: 221384)
+Logs:
+  route10 quote tokenIn 10000000
+  route10 quote tokenOut 9999000000000000000
+  route10 usdc delta 10000000
+  route10 tsy delta 9999000000000000000
+
+[PASS] test_route11_exactOut_settles() (gas: 215596)
+Logs:
+  route11 quote tokenIn 10001001
+  route11 quote tokenOut 10000000000000000000
+
+[PASS] test_route8_exactIn_revertsInsufficientCredits() (gas: 240471)
+Logs:
+  route8 quote tokenIn 10000000000000000000
+  route8 quote tokenOut 30766120
+  route8 quote issuer 0
+  route8 quote spread 3080
+  route8 quote lp 0
+
+[PASS] test_route9_exactOut_revertsInsufficientCredits() (gas: 238841)
+Logs:
+  route9 quote tokenIn 325032860822229128
+  route9 quote tokenOut 1000000
+
+Suite result: ok. 4 passed; 0 failed; 0 skipped; finished in 552.79ms (33.31ms CPU time)
+
+Ran 1 test for test/AuditSettlement.t.sol:AuditYieldInputTest
+[PASS] test_tsyInput_usesOutputDelegateWithoutCredits() (gas: 309733)
+Logs:
+  after buy tsy 99990000000000000000
+  credits 0
+  withheld 0
+  getYield 0
+  sell quote in 99990000000000000000 out 99980001
+  usdc received 99980001
+  tsy after 0
+  credits after 0
+  withheld after 0
+
+Suite result: ok. 1 passed; 0 failed; 0 skipped; finished in 554.18ms (10.08ms CPU time)
+
+Ran 4 test suites in 560.12ms (2.21s CPU time): 8 tests passed, 0 failed, 0 skipped (8 total tests)

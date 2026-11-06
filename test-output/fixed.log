@@ -1,0 +1,11 @@
+Compiling 2 files with Solc 0.8.26
+Solc 0.8.26 finished in 1.26s
+Compiler run successful!
+
+Ran 3 tests for test/MonstroStakingRegression.t.sol:MonstroStakingRegressionTest
+[PASS] test_H01_NewStakerEarnsNothingImmediately() (gas: 294882)
+[PASS] test_H02_EmissionsNeverOverAllocated() (gas: 366468)
+[PASS] test_M01_GetPenaltyInfoMatchesWithdraw() (gas: 247578)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 1.79ms (980.69µs CPU time)
+
+Ran 1 test suite in 11.12ms (1.79ms CPU time): 3 tests passed, 0 failed, 0 skipped (3 total tests)

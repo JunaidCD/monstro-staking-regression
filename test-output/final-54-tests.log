@@ -1,0 +1,505 @@
+Compiling 8 files with Solc 0.8.35
+Solc 0.8.35 finished in 2.66s
+Compiler run successful with warnings:
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:15:5:
+   |
+15 |     function test_fuzz_feeAccounting_route00(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:19:5:
+   |
+19 |     function test_fuzz_feeAccounting_route01(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:23:5:
+   |
+23 |     function test_fuzz_feeAccounting_route02(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:27:5:
+   |
+27 |     function test_fuzz_feeAccounting_route03(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:31:5:
+   |
+31 |     function test_fuzz_feeAccounting_route04(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:35:5:
+   |
+35 |     function test_fuzz_feeAccounting_route05(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:39:5:
+   |
+39 |     function test_fuzz_feeAccounting_route06(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:43:5:
+   |
+43 |     function test_fuzz_feeAccounting_route07(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:47:5:
+   |
+47 |     function test_fuzz_feeAccounting_route08(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:51:5:
+   |
+51 |     function test_fuzz_feeAccounting_route09(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:55:5:
+   |
+55 |     function test_fuzz_feeAccounting_route10(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/FeeAccounting.t.sol:59:5:
+   |
+59 |     function test_fuzz_feeAccounting_route11(uint256 seed) public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+   --> test/FeeMonotonicity.t.sol:301:5:
+    |
+301 |     function test_zeroSpreadTakeStillChargesOneBpMinimum() public {
+    |     ^ (Relevant source part starts here and spans across multiple lines).
+
+Warning (2018): Function state mutability can be restricted to view
+  --> test/RouteMatrix.t.sol:10:5:
+   |
+10 |     function test_routeMatrix_all12RoutesQuote() public {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Ran 3 tests for test/Baseline.t.sol:BaselineTest
+[PASS] test_forkAndConfig() (gas: 89590)
+Logs:
+  fork block 12067842
+  fork id 0
+  USDC/USD 1000000000000000000
+  TSY/USD 1000000000000000000
+  RW0/USD 3080000000000000000
+  RW1/USD 1190000000000000000
+  spreadProtocolTakeRate 0
+  issuerFee(USDC) 0
+  discount(USDC,RW0) 1000000000000000
+  redemption(USDC,RW0) 1000000000000000
+  protocolFeeExempt(USDC) false
+  protocolFeeExempt(TSY) true
+  autoLiquidity(USDC) 0x06aa03964db1f7257357ef09714a5f0ca3633723df419e97015e0c7a3e83edb7
+
+[PASS] test_route0_quote_smoke() (gas: 64408)
+Logs:
+  route0 100 USDC -> RW0
+  tokenInAmt 100000000
+  tokenOutAmt 32431818181818181818
+  issuerFeeAmt 0
+  spreadFeeAmt 10000
+  lpFeeAmt 100000
+  residual USD WAD 1
+
+[PASS] test_storageSlots_matchGetters() (gas: 31393)
+Logs:
+  storage-slot derivation verified against live getters
+
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 325.95ms (12.45ms CPU time)
+
+Ran 7 tests for test/RouteMatrix.t.sol:RouteMatrixTest
+[PASS] test_maxSwapLegs_boundary() (gas: 91752)
+Logs:
+  maxSwapLegs boundary: 0 and >max rejected; max accepted by length check
+    max_legs 8
+    at_max_later_selector 0x5048bd6200000000000000000000000000000000000000000000000000000000
+    at_max_later_name IdenticalAssets
+
+[PASS] test_routeMatrix_all12RoutesQuote() (gas: 367050)
+Logs:
+  route 0
+    label USDC->RW0
+    status OK
+    tokenInAmt 100000000
+    tokenOutAmt 32431818181818181818
+    issuerFeeAmt 0
+    spreadFeeAmt 10000
+    lpFeeAmt 100000
+  route 1
+    label USDC->RW0
+    status OK
+    tokenInAmt 3083392
+    tokenOutAmt 1000000000000000000
+    issuerFeeAmt 0
+    spreadFeeAmt 309
+    lpFeeAmt 3084
+  route 2
+    label RW0->USDC
+    status OK
+    tokenInAmt 1000000000000000000
+    tokenOutAmt 3076612
+    issuerFeeAmt 0
+    spreadFeeAmt 308
+    lpFeeAmt 0
+  route 3
+    label RW0->USDC
+    status OK
+    tokenInAmt 32503286082222912737
+    tokenOutAmt 100000000
+    issuerFeeAmt 0
+    spreadFeeAmt 10012
+    lpFeeAmt 0
+  route 4
+    label RW1->RW0
+    status OK
+    tokenInAmt 100000000
+    tokenOutAmt 38551410386363636363
+    issuerFeeAmt 0
+    spreadFeeAmt 23787
+    lpFeeAmt 118870
+  route 5
+    label RW1->RW0
+    status OK
+    tokenInAmt 2593939
+    tokenOutAmt 1000000000000000000
+    issuerFeeAmt 0
+    spreadFeeAmt 618
+    lpFeeAmt 3084
+  route 6
+    label USDC->TSY
+    status OK
+    tokenInAmt 100000000
+    tokenOutAmt 99990000000000000000
+    issuerFeeAmt 0
+    spreadFeeAmt 10000
+    lpFeeAmt 0
+  route 7
+    label USDC->TSY
+    status OK
+    tokenInAmt 100010002
+    tokenOutAmt 100000000000000000000
+    issuerFeeAmt 0
+    spreadFeeAmt 10002
+    lpFeeAmt 0
+  route 8
+    label RW0->USDC
+    status OK
+    tokenInAmt 1000000000000000000
+    tokenOutAmt 3076612
+    issuerFeeAmt 0
+    spreadFeeAmt 308
+    lpFeeAmt 0
+  route 9
+    label RW0->USDC
+    status OK
+    tokenInAmt 32503286082222912737
+    tokenOutAmt 100000000
+    issuerFeeAmt 0
+    spreadFeeAmt 10012
+    lpFeeAmt 0
+  route 10
+    label USDC->TSY
+    status OK
+    tokenInAmt 100000000
+    tokenOutAmt 99990000000000000000
+    issuerFeeAmt 0
+    spreadFeeAmt 10000
+    lpFeeAmt 0
+  route 11
+    label USDC->TSY
+    status OK
+    tokenInAmt 100010002
+    tokenOutAmt 100000000000000000000
+    issuerFeeAmt 0
+    spreadFeeAmt 10002
+    lpFeeAmt 0
+  all 12 routes quoted successfully
+
+[PASS] test_routeValidation_identicalAssets() (gas: 28945)
+[PASS] test_routeValidation_rwaNotAccepted() (gas: 31457)
+[PASS] test_routeValidation_stablecoinNotAccepted() (gas: 25837)
+[PASS] test_routeValidation_unsupportedRouteId() (gas: 29203)
+[PASS] test_routeValidation_wrongDelegate() (gas: 29491)
+Suite result: ok. 7 passed; 0 failed; 0 skipped; finished in 326.10ms (20.73ms CPU time)
+
+Ran 3 tests for test/Permit.t.sol:PermitTest
+[PASS] test_eip712_orderedPermit_settlesAndConsumesNonce() (gas: 279962)
+Logs:
+  ordered 4-field permit settled
+    nonce 0
+    tokenOutAmt 324318181818181818
+    receiver RWA delta 324318181818181818
+
+[PASS] test_eip712_unorderedPermit_settlesAndConsumesNonce() (gas: 282125)
+Logs:
+  unordered 4-field permit settled
+    unordered_nonce 12345
+    tokenOutAmt 324318181818181818
+
+[PASS] test_eip712_wrongSignerReverts() (gas: 141673)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 466.31ms (32.09ms CPU time)
+
+Ran 15 tests for test/FeeMonotonicity.t.sol:FeeMonotonicityTest
+[PASS] test_issuerFee_reportedButDoesNotChangeUserAmounts() (gas: 108423)
+Logs:
+  issuer fee 0 -> 1%: user token amounts unchanged
+    issuer_fee_exactIn 1000000000
+    issuer_fee_exactOut 308339174
+
+[PASS] test_route0_redemptionFee_up_exactIn_outputDoesNotIncrease() (gas: 77587)
+Logs:
+  route0 redemption 0.1% -> 2%
+    out_before 32431818181818181818181
+    out_after 31814935064935064935064
+    lp_fee_before 100000000
+    lp_fee_after 2000000000
+
+[PASS] test_route0_spreadTakeAndDiscount_up_exactIn_outputDoesNotIncrease() (gas: 78143)
+Logs:
+  route0 spread take 0 -> 50%, discount 0.1% -> 2%
+    spread_before 10000000
+    spread_after 1050050051
+    out_before 32431818181818181818181
+    out_after 32094139594139594123376
+
+[PASS] test_route1_redemptionFee_up_exactOut_inputDoesNotDecrease() (gas: 77331)
+Logs:
+  route1 redemption 0.1% -> 2%
+    in_before 30833917310
+    in_after 31431778753
+
+[PASS] test_route1_spreadTakeAndDiscount_up_exactOut_inputDoesNotDecrease() (gas: 77938)
+Logs:
+  route1 spread take 0 -> 50%, discount 0.1% -> 2%
+    in_before 30833917310
+    in_after 31158336465
+
+[PASS] test_route2_discount_up_exactIn_outputDoesNotIncrease() (gas: 77668)
+Logs:
+  route2 discount 0.1% -> 2%
+    out_before 30766120000
+    out_after 30180920000
+
+[PASS] test_route3_discount_up_exactOut_inputDoesNotDecrease() (gas: 78421)
+Logs:
+  route3 discount 0.1% -> 2%
+    in_before 3250328608222291273649
+    in_after 3313351614198639405294
+
+[PASS] test_route4_inputDiscount_up_exactIn_outputDoesNotIncrease() (gas: 100635)
+Logs:
+  route4 input discount 0.1% -> 2%
+    out_before 3855141038636363636363
+    out_after 3781812697727272727272
+
+[PASS] test_route4_outputRedemption_up_exactIn_outputDoesNotIncrease() (gas: 100771)
+Logs:
+  route4 output redemption 0.1% -> 2%
+    out_before 3855141038636363636363
+    out_after 3781812697727272727272
+
+[PASS] test_route5_inputDiscount_up_exactOut_inputDoesNotDecrease() (gas: 101822)
+Logs:
+  route5 input discount 0.1% -> 2%
+    in_before 25939388209
+    in_after 26442346037
+
+[PASS] test_route5_outputRedemption_up_exactOut_inputDoesNotDecrease() (gas: 102487)
+Logs:
+  route5 output redemption 0.1% -> 2%
+    in_before 25939388209
+    in_after 26442346037
+
+[PASS] test_route6_stablecoinRedemption_up_exactIn_outputDoesNotIncrease() (gas: 74457)
+Logs:
+  route6 stablecoin redemption 0 -> 2%
+    out_before 99990000000000000000000
+    out_after 97990000000000000000000
+    lp_fee_before 0
+    lp_fee_after 2000000000
+
+[PASS] test_route7_stablecoinRedemption_up_exactOut_inputDoesNotDecrease() (gas: 74279)
+Logs:
+  route7 stablecoin redemption 0 -> 2%
+    in_before 100010001001
+    in_after 102051229718
+
+[PASS] test_storageOverrides_areEffective() (gas: 33959)
+Logs:
+  all fork-local fee storage overrides verified against getters
+
+[PASS] test_zeroSpreadTakeStillChargesOneBpMinimum() (gas: 60699)
+Logs:
+  zero take still reports the 1 bp spread floor 10000
+
+Suite result: ok. 15 passed; 0 failed; 0 skipped; finished in 620.92ms (70.46ms CPU time)
+
+Ran 13 tests for test/FeeAccounting.t.sol:FeeAccountingTest
+[PASS] test_feeAccounting_residualDistribution() (gas: 2293584)
+Logs:
+  route 0
+    label USDC->RW0
+    residual_min_usd_wad -109999999999
+    residual_max_usd_wad 1
+    residual_max_positive_bps 0
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 0
+    dust_usd_wad 10000000000000
+  route 1
+    label USDC->RW0
+    residual_min_usd_wad -1920000000000
+    residual_max_usd_wad 0
+    residual_max_positive_bps 0
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 0
+    dust_usd_wad 10000000000000
+  route 2
+    label RW0->USDC
+    residual_min_usd_wad 30000000000000
+    residual_max_usd_wad 3080000000000000000000
+    residual_max_positive_bps 10
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 3080000000000000000000
+    dust_usd_wad 10000000000000
+  route 3
+    label RW0->USDC
+    residual_min_usd_wad 1000211332465714
+    residual_max_usd_wad 1001101210465712283513
+    residual_max_positive_bps 9
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 1001101211332465712283
+    dust_usd_wad 10000000000000
+  route 4
+    label RW1->RW0
+    residual_min_usd_wad 1189560100000002
+    residual_max_usd_wad 1190000000000000000002
+    residual_max_positive_bps 10
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 1190000000000000000000
+    dust_usd_wad 10000000000000
+  route 5
+    label RW1->RW0
+    residual_min_usd_wad 30600000000000
+    residual_max_usd_wad 3086787197020000000000
+    residual_max_positive_bps 10
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 3086787196821020000000
+    dust_usd_wad 10000000000000
+  route 6
+    label USDC->TSY
+    residual_min_usd_wad -100000000000
+    residual_max_usd_wad 0
+    residual_max_positive_bps 0
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 0
+    dust_usd_wad 10000000000000
+  route 7
+    label USDC->TSY
+    residual_min_usd_wad 0
+    residual_max_usd_wad 0
+    residual_max_positive_bps 0
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 0
+    dust_usd_wad 10000000000000
+  route 8
+    label RW0->USDC
+    residual_min_usd_wad 30000000000000
+    residual_max_usd_wad 3080000000000000000000
+    residual_max_positive_bps 10
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 3080000000000000000000
+    dust_usd_wad 10000000000000
+  route 9
+    label RW0->USDC
+    residual_min_usd_wad 1000211332465714
+    residual_max_usd_wad 1001101210465712283513
+    residual_max_positive_bps 9
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 1001101211332465712283
+    dust_usd_wad 10000000000000
+  route 10
+    label USDC->TSY
+    residual_min_usd_wad -100000000000
+    residual_max_usd_wad 0
+    residual_max_positive_bps 0
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 0
+    dust_usd_wad 10000000000000
+  route 11
+    label USDC->TSY
+    residual_min_usd_wad 0
+    residual_max_usd_wad 0
+    residual_max_positive_bps 0
+    residual_max_negative_bps 0
+    implicit_bound_max_usd_wad 0
+    dust_usd_wad 10000000000000
+
+[PASS] test_fuzz_feeAccounting_route00(uint256) (runs: 32, μ: 67728, ~: 67827)
+[PASS] test_fuzz_feeAccounting_route01(uint256) (runs: 32, μ: 68452, ~: 68216)
+[PASS] test_fuzz_feeAccounting_route02(uint256) (runs: 32, μ: 70400, ~: 70541)
+[PASS] test_fuzz_feeAccounting_route03(uint256) (runs: 32, μ: 70843, ~: 70943)
+[PASS] test_fuzz_feeAccounting_route04(uint256) (runs: 32, μ: 89706, ~: 89805)
+[PASS] test_fuzz_feeAccounting_route05(uint256) (runs: 32, μ: 90736, ~: 90501)
+[PASS] test_fuzz_feeAccounting_route06(uint256) (runs: 32, μ: 64392, ~: 64492)
+[PASS] test_fuzz_feeAccounting_route07(uint256) (runs: 32, μ: 64724, ~: 64801)
+[PASS] test_fuzz_feeAccounting_route08(uint256) (runs: 32, μ: 70446, ~: 70587)
+[PASS] test_fuzz_feeAccounting_route09(uint256) (runs: 32, μ: 70922, ~: 71022)
+[PASS] test_fuzz_feeAccounting_route10(uint256) (runs: 32, μ: 64450, ~: 64550)
+[PASS] test_fuzz_feeAccounting_route11(uint256) (runs: 32, μ: 64804, ~: 64881)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 620.83ms (1.70s CPU time)
+
+Ran 13 tests for test/Equivalence.t.sol:EquivalenceTest
+[PASS] test_equivalence_sweep() (gas: 3014789)
+Logs:
+  pair 0 1
+    label USDC->RW0
+    max_forward_diff_usd_wad 0
+    max_reverse_diff_usd_wad 382199999997
+  pair 2 3
+    label RW0->USDC
+    max_forward_diff_usd_wad 813233356689
+    max_reverse_diff_usd_wad 0
+  pair 4 5
+    label RW1->RW0
+    max_forward_diff_usd_wad 0
+    max_reverse_diff_usd_wad 969941772097
+  pair 6 7
+    label USDC->TSY
+    max_forward_diff_usd_wad 0
+    max_reverse_diff_usd_wad 999800000000
+  pair 8 9
+    label RW0->USDC
+    max_forward_diff_usd_wad 813233356689
+    max_reverse_diff_usd_wad 0
+  pair 10 11
+    label USDC->TSY
+    max_forward_diff_usd_wad 0
+    max_reverse_diff_usd_wad 999800000000
+
+[PASS] test_fuzz_equiv_exactIn_then_exactOut_00_01(uint256) (runs: 32, μ: 74621, ~: 74703)
+[PASS] test_fuzz_equiv_exactIn_then_exactOut_02_03(uint256) (runs: 32, μ: 78613, ~: 78734)
+[PASS] test_fuzz_equiv_exactIn_then_exactOut_04_05(uint256) (runs: 32, μ: 102943, ~: 103036)
+[PASS] test_fuzz_equiv_exactIn_then_exactOut_06_07(uint256) (runs: 32, μ: 70438, ~: 70516)
+[PASS] test_fuzz_equiv_exactIn_then_exactOut_08_09(uint256) (runs: 32, μ: 78779, ~: 78900)
+[PASS] test_fuzz_equiv_exactIn_then_exactOut_10_11(uint256) (runs: 32, μ: 70554, ~: 70632)
+[PASS] test_fuzz_equiv_exactOut_then_exactIn_00_01(uint256) (runs: 32, μ: 74787, ~: 74569)
+[PASS] test_fuzz_equiv_exactOut_then_exactIn_02_03(uint256) (runs: 32, μ: 78577, ~: 78655)
+[PASS] test_fuzz_equiv_exactOut_then_exactIn_04_05(uint256) (runs: 32, μ: 103076, ~: 102858)
+[PASS] test_fuzz_equiv_exactOut_then_exactIn_06_07(uint256) (runs: 32, μ: 70324, ~: 70400)
+[PASS] test_fuzz_equiv_exactOut_then_exactIn_08_09(uint256) (runs: 32, μ: 78722, ~: 78800)
+[PASS] test_fuzz_equiv_exactOut_then_exactIn_10_11(uint256) (runs: 32, μ: 70440, ~: 70516)
+Suite result: ok. 13 passed; 0 failed; 0 skipped; finished in 628.23ms (1.64s CPU time)
+
+Ran 6 test suites in 631.67ms (2.99s CPU time): 54 tests passed, 0 failed, 0 skipped (54 total tests)

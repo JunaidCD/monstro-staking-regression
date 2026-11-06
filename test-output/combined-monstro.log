@@ -1,0 +1,9 @@
+No files changed, compilation skipped
+
+Ran 3 tests for test/MonstroStakingRegression.t.sol:MonstroStakingRegressionTest
+[PASS] test_H01_NewStakerEarnsNothingImmediately() (gas: 294869)
+[PASS] test_H02_EmissionsNeverOverAllocated() (gas: 366431)
+[PASS] test_M01_GetPenaltyInfoMatchesWithdraw() (gas: 247564)
+Suite result: ok. 3 passed; 0 failed; 0 skipped; finished in 1.74ms (950.20µs CPU time)
+
+Ran 1 test suite in 14.91ms (1.74ms CPU time): 3 tests passed, 0 failed, 0 skipped (3 total tests)
